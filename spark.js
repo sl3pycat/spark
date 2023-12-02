@@ -1,7 +1,7 @@
 console.time("spark v0.1")
 const spark = {
   // a collection of all scripts that should be loaded on init (push to the array to add custom libs)
-  libs:["core/attributes.js","core/sumarize.js","core/observer.js","core/mutator.js","core/tag.js","core/formatter.js","native/set.js","native/get.js","native/define.js","native/define.function.js","native/events.js","native/variables.js","native/styling.js",...(document.currentScript.getAttribute("import")||"").split(" ").filter(e=>e).map(entry=>`imports/${entry}.js`)],
+  libs:["core/attributes.js","core/sumarize.js","core/observer.js","core/mutator.js","core/tag.js","core/formatter.js","native/set.js","native/get.js","native/define.js","native/define.function.js","native/events.js","native/variables.js","native/styling.js",...(document.currentScript.getAttribute("import")||"").split(" ").filter(e=>e).map(entry=>`imports/${entry}.js`)].map(url=>new URL(location.hostname=="localhost"?url:url.replace(".js",".min.js"), document.currentScript.src).href),
   //reference to the core script
   cs:document.currentScript
   
