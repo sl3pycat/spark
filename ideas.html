@@ -1,0 +1,27 @@
+<!-- loops -->
+<loop count=30 >
+  loop index at {{loop.index}} / {{loop.length}}
+</loop>
+
+<!-- switch case -->
+<switch value="30">
+  <case value="20">im 20</case>
+  <case value="30">im 30</case>
+  <case default>whats my age?!</case>
+</switch>
+
+<!-- string lists -->
+<list todo="buy bread, walk the dog"/>
+<list todo-push="go party"/>
+<ul bind-list="todo"><li>{{todo.index}}. {{todo.value}}.</li></ul>
+
+<!-- object (3/10) -->
+<object user>
+  <name>John Doe</name>
+  <age>32</age>
+</object>
+
+<o-user-name/>
+<object user="age">
+  33
+</object>
