@@ -40,3 +40,11 @@ Prepend a hyphen to the style name then add it as an attribute with its value eg
 
 
 ---
+### Dynamically changing the hue and theme
+To set the theme use the `theme` attribute. To set the hue use the `hue` attribute.
+
+```html
+<set theme=oled hue=cyan />
+```
+
+---

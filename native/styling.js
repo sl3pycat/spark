@@ -1,10 +1,10 @@
 spark.addAttr("^\\-",function(tag,attr){
   if(attr.startsWith("--")){
-    tag.style.setProperty(attr,tag.getAttribute(attr))
-    return tag.getAttribute(attr)
+    tag.style.setProperty(attr,tag.gfa(attr))
+    return tag.gfa(attr)
   }
   let style = attr.replace("-","")
-  tag.style[style]=tag.getAttribute(attr)
+  tag.style[style]=tag.gfa(attr)
   tag.removeAttribute(attr)
 })
 

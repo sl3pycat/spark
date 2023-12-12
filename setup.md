@@ -26,6 +26,14 @@ By default theres already a splash screen but you can add a custom screen using 
 #### 2. Set the app title and icon
 The `title` attribute sets the apps title and the `icon` attribute sets the apps favicon.
 
+#### 3. Set the app theme
+By default, the app theme is set to `system` which means the app's theme is determined by the device. Available themes are `light`, `dark`, `oled` and `system`. Set the app theme using the `theme` attribute on the script tag.
+
+#### 4. Set the app hue
+The `hue` attribute on the script tag determines the navbar color and colors of some components (like buttons and bars). Set the hue using the `hue` attribute on the script tag.
+
+To set the theme and hue dynamically, use the [set](./native/set.md) tag.
+
 ---
 ### Building a PWA
 

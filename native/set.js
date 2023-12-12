@@ -1,4 +1,10 @@
 spark.tag("set","closing",function(tag){
+  //set themes
+  if(tag.hasAttribute("theme")||tag.hasAttribute("hue")){
+    spark.theme(tag.getAttribute("theme"),tag.getAttribute("hue"))
+    return tag.remove()
+  }
+  
   //gets the appropriate targets
   let targets = []
   if(tag.hasAttribute("target"))targets.push(document.querySelector(tag.getAttribute("target")))
@@ -24,6 +30,8 @@ spark.tag("set","closing",function(tag){
       else if(entry[0]=="text")target.innerText=entry[1]
       //set html
       else if(entry[0]=="html")target.innerHTML=entry[1]
+      //set value
+      else if(entry[0]=="value")target.value=entry[1]
       //set outer text
       else if (entry[0] == "outer-text") target.outerText = entry[1]
       //set text

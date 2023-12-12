@@ -38,4 +38,9 @@ spark.addAttr("^on\\-",function(tag,attr){
     
     tag.setAttribute("execute",tag.getAttribute(attr))
   }
+  
+  //custom event for inputs
+  if(ename=="enter")tag.onkeyup=event=>{
+      if(event.keyCode==13&&tag.value.length>0)tag.setAttribute("execute",tag.getAttribute(attr))
+    }
 })

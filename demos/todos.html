@@ -1,0 +1,12 @@
+<html>
+  <script src="/spark.js" import="list"></script>
+    <input on-enter="add todo">
+    <define event="add todo">
+      <list todo unshift="{{this.value}}" />
+      <set value="" />
+    </define>
+    <button on-click="<list todo empty/>">empty list</button>
+    <ul bind-list="todo">
+      <li>{{todo.value}}</li>
+    </ul>
+</html>

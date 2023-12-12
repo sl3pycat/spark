@@ -8,6 +8,7 @@ Extend functionality by importing modules. Add and space separated string list o
 
 available modules
 - [alert](./alert.md)
+- [list](./list.md)
 - [prompt](./prompt.md)
 
 ---
