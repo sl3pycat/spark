@@ -30,14 +30,20 @@ document.addEventListener("DOMContentLoaded",()=>{
 })
 
 //helper to fetch text files 
+spark.texts={}
 spark.text = async function FetchText(...urls){
   //fetches multiple scripts then joins them
   if(urls.length>1)return (await Promise.all(urls.map(url=>FetchText(url)))).join("\n")
   else {
     try{
+      if(urls[0] in spark.texts)return spark.texts[urls[0]]
       //fetch a single script
       let text = await fetch(urls[0])
-      if(text.ok)return await text.text()
+      if(text.ok){
+        text = await text.text()
+        spark.texts[urls[0]]=text
+        return text
+      }
       else return ""
     } catch(e){
       //try again if offline, usual network breaks are due to connection resets

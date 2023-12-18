@@ -3,7 +3,7 @@
   
   <list notes push="Welome to the notes app, press the + button to add a note."/>
   
-  <bar><text>Spark notes</text><svg icon="github" onclick='location.href="https://github.com/sl3pycat/spark"'/><svg icon="three dots" on-click="<toast>settings</toast>"/></bar>
+  <bar><text>Spark notes</text><svg icon="three dots" on-click="<toast>settings</toast>"/></bar>
   
   <notes bind-list=notes ><note ><svg -margin-bottom=10px -margin-left=auto on-click="remove" index="{{notes.index}}" icon="x"/><text>{{notes.value-decoded}}</text></note></notes>
   
